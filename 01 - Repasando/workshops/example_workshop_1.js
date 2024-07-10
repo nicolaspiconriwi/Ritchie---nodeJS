@@ -52,7 +52,7 @@ class Person{
     
     static createUser(name, email, password){
         const newUser = new RegulaUser(name, email, password)
-        Person.users.push(newUser)
+        this.users.push(newUser)
     }
 
 }
@@ -100,10 +100,10 @@ class Book{
 
         if(user.role === "admin"){
             const newBook = new Book(startDate, endDate, userId, 200, peopleNumber);
-            Book.books.push(newBook)
+            this.books.push(newBook)
         }else{
             const newBook = new Book(startDate, endDate, userId, 200, 1);
-            Book.books.push(newBook)
+            this.books.push(newBook)
         }
     }
 
