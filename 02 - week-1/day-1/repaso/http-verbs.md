@@ -106,3 +106,7 @@ app.delete('/reservas/:id', (req, res) => {
   res.status(204).end();
 });
 ```
+
+```html
+<div>hola mundo</div>
+```
