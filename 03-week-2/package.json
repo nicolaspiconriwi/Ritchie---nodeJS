@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  },
+  "name": "03-week-2",
+  "description": "- [Diapositiva de clase](https://docs.google.com/presentation/d/1BqSdYAkCdwRzDyaHpvuO6D0WRmVMeHqH/edit#slide=id.g2edb207bea4_1_6)",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "manualstart": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
