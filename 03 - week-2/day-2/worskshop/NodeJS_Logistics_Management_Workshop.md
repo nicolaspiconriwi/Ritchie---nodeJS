@@ -20,6 +20,7 @@ Welcome to the Node.js Logistics Management workshop. This project is designed t
 5. Handle errors and secure the RESTful API with middleware.
 6. Understanding status codes and response bodies.
 7. Differentiate between development and production dependencies.
+8. Design relational model for the required entities.
 
 ## Project Description
 
