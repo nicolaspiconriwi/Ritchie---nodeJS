@@ -18,7 +18,8 @@ Welcome to the Node.js Logistics Management workshop. This project is designed t
 3. Implement routes and middleware in Express.
 4. Read and write data in the file system using the `fs` module with promises.
 5. Handle errors and secure the RESTful API with middleware.
-6. Differentiate between development and production dependencies.
+6. Understanding status codes and response bodies.
+7. Differentiate between development and production dependencies.
 
 ## Project Description
 
@@ -78,7 +79,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
   }
   ```
 - **Successful Response:**
-  - **Code:** 201
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -95,7 +96,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 
 - **Route:** GET /warehouses
 - **Successful Response:**
-  - **Code:** 200
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -113,7 +114,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 
 - **Route:** GET /warehouses/:id
 - **Successful Response:**
-  - **Code:** 200
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -140,7 +141,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 
 - **Route:** DELETE /warehouses/:id
 - **Successful Response:**
-  - **Code:** 200
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -164,7 +165,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 
 - **Route:** GET /shipments
 - **Successful Response:**
-  - **Code:** 200
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -183,7 +184,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 
 - **Route:** GET /shipments/:id
 - **Successful Response:**
-  - **Code:** 200
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -212,7 +213,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 
 - **Route:** DELETE /shipments/:id
 - **Successful Response:**
-  - **Code:** 200
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -234,7 +235,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 
 - **Route:** GET /drivers
 - **Successful Response:**
-  - **Code:** 200
+  - **Code:** Buscar el código correcto
   - **Response Body:**
     ```json
     {
@@ -254,6 +255,7 @@ A vehicle is a machine used to transport goods. It has the following properties:
 - You must use the `fs` module to read and write files.
 - You must use middleware to handle errors and secure the API.
 - You must differentiate between development and production dependencies.
+- You must differentiate the variety of status codes.
 
 ## Resources
 
