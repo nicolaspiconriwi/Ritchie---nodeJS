@@ -1,4 +1,70 @@
 
+# Node.js Logistics Management Workshop: Real Project
+
+## Introduction
+
+Welcome to the Node.js Logistics Management workshop. This project is designed to apply basic concepts of Node.js, Express, promises, and the difference between development and production dependencies. You will create a RESTful API that interacts with the file system instead of a database.
+
+## Submission Instructions
+
+1. Create a repository on GitHub named `nodejs-logistics-project`.
+2. Follow the instructions and complete the objectives outlined in this document.
+3. Upload your project to GitHub and share the repository link.
+
+## Objectives
+
+1. Set up a Node.js development environment.
+2. Create a web server using Node.js and Express.
+3. Implement routes and middleware in Express.
+4. Read and write data in the file system using the `fs` module with promises.
+5. Handle errors and secure the RESTful API with middleware.
+6. Differentiate between development and production dependencies.
+
+## Project Description
+
+You will create a RESTful API to manage logistics information. The entities to be managed are: **Warehouses**, **Shipments**, **Drivers**, and **Vehicles**. Each entity will be stored in a JSON file in the file system.
+
+### Warehouse
+
+A warehouse is a building for storing goods. It has the following properties:
+
+- **ID**: A unique identifier for the warehouse.
+- **Name**: The name of the warehouse.
+- **Location**: The location of the warehouse.
+
+### Shipment
+
+A shipment is a load of goods that is transported from one place to another. It has the following properties:
+
+- **ID**: A unique identifier for the shipment.
+- **Item**: The name of the item being shipped.
+- **Quantity**: The quantity of the item being shipped.
+
+### Driver
+
+A driver is a person who drives a vehicle to transport goods. It has the following properties:
+
+- **ID**: A unique identifier for the driver.
+- **Name**: The name of the driver.
+
+### Vehicle
+
+A vehicle is a machine used to transport goods. It has the following properties:
+
+- **ID**: A unique identifier for the vehicle.
+- **Model**: The model of the vehicle.
+- **Year**: The year the vehicle was manufactured.
+
+## Relationship Between Entities
+
+- A warehouse can have multiple shipments. However, a shipment can only belong to one warehouse.
+- A driver can drive multiple vehicles. However, a vehicle can only be driven by one driver.
+- A vehicle can transport multiple shipments. However, a shipment can only be transported by one vehicle.
+- A shipment can be transported by multiple drivers. However, a driver can only transport one shipment.
+- A driver can work in multiple warehouses. However, a warehouse can only have one driver.
+- A vehicle can be parked in multiple warehouses. However, a warehouse can only have one vehicle parked.
+- A warehouse can have multiple drivers. However, a driver can only work in one warehouse.
+
 ## User Stories
 
 ### 1. As a user, I want to create a new warehouse to add to the list of warehouses.
@@ -178,111 +244,6 @@
           "name": "Driver Name"
         }
       ]
-    }
-    ```
-
-### 13. As a user, I want to view a specific driver by its ID to know its details.
-
-- **Route:** GET /drivers/:id
-- **Successful Response:**
-  - **Code:** 200
-  - **Response Body:**
-    ```json
-    {
-      "driver": {
-        "id": 1,
-        "name": "Driver Name"
-      }
-    }
-    ```
-
-### 14. As a user, I want to update an existing driver to modify their details.
-
-- **Route:** PUT /drivers/:id
-- **Request Body:**
-  ```json
-  {
-    "name": "New Driver Name"
-  }
-  ```
-
-### 15. As a user, I want to delete a driver to keep my list organized.
-
-- **Route:** DELETE /drivers/:id
-- **Successful Response:**
-  - **Code:** 200
-  - **Response Body:**
-    ```json
-    {
-      "message": "Driver deleted successfully"
-    }
-    ```
-
-### 16. As a user, I want to create a new vehicle to add to the list of vehicles.
-
-- **Route:** POST /vehicles
-- **Request Body:**
-  ```json
-  {
-    "model": "Vehicle Model",
-    "plateNumber": "ABC123"
-  }
-  ```
-
-### 17. As a user, I want to see all vehicles to review them.
-
-- **Route:** GET /vehicles
-- **Successful Response:**
-  - **Code:** 200
-  - **Response Body:**
-    ```json
-    {
-      "vehicles": [
-        {
-          "id": 1,
-          "model": "Vehicle Model",
-          "plateNumber": "ABC123"
-        }
-      ]
-    }
-    ```
-
-### 18. As a user, I want to view a specific vehicle by its ID to know its details.
-
-- **Route:** GET /vehicles/:id
-- **Successful Response:**
-  - **Code:** 200
-  - **Response Body:**
-    ```json
-    {
-      "vehicle": {
-        "id": 1,
-        "model": "Vehicle Model",
-        "plateNumber": "ABC123"
-      }
-    }
-    ```
-
-### 19. As a user, I want to update an existing vehicle to modify its details.
-
-- **Route:** PUT /vehicles/:id
-- **Request Body:**
-  ```json
-  {
-    "model": "New Vehicle Model",
-    "plateNumber": "XYZ789"
-  }
-  ```
-
-### 20. As a user, I want to delete a vehicle to keep my list organized.
-
-- **Route:** DELETE /vehicles/:id
-- **Successful Response:**
-  - **Code:** 200
-  - **Response Body:**
-    ```json
-    {
-      "message": "Vehicle deleted successfully"
     }
     ```
 
