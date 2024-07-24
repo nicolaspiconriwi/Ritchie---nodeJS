@@ -19,6 +19,7 @@ app.post('/data', (req, res) => {
     }, 1000);
 });
 
+
 // Fase de timers
 setTimeout(() => {
     console.log('1. Timers phase: setTimeout');
@@ -68,3 +69,5 @@ process.on('exit', (code) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+console.log("hola mundo");
