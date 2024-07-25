@@ -62,8 +62,8 @@ A vehicle is a machine used to transport goods. It has the following properties:
 - A warehouse can have multiple shipments. However, a shipment can only belong to one warehouse.
 - A driver can drive multiple vehicles. However, a vehicle can only be driven by one driver.
 - A vehicle can transport multiple shipments. However, a shipment can only be transported by one vehicle.
-- A shipment can be transported by multiple drivers. However, a driver can only transport one shipment.
-- A driver can work in multiple warehouses. However, a warehouse can only have one driver.
+- A shipment can be transported by one driver. However, a driver can transport multiple shipment.
+- A driver can work in one warehouse. However, a warehouse can have multiple drivers.
 - A vehicle can be parked in multiple warehouses. However, a warehouse can only have one vehicle parked.
 - A warehouse can have multiple drivers. However, a driver can only work in one warehouse.
 
