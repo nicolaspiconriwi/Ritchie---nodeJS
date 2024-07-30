@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Inicialización y Configuración
 app.use(express.json());
@@ -32,17 +32,17 @@ setTimeout(() => {
 // Se puede comparar con un callback de una promesa, que se ejecuta en el microtask queue.
 fs.readFile(__filename, () => {
     console.log('2. Pending callbacks phase: readFile callback');
-
-    // Fase de check
-    setImmediate(() => {
-        console.log('4. Check phase: setImmediate');
-    });
-
+    
     // Fase de close callbacks
     setTimeout(() => {
         console.log('6. Close callbacks phase');
     }, 0);
 
+        // Fase de check
+    setImmediate(() => {
+        console.log('4. Check phase: setImmediate');
+    });
+    
     // Usado internamente, no podemos demostrar idle y prepare directamente.
     // Para simular esta fase, podemos usar process.nextTick()
     process.nextTick(() => {
@@ -70,4 +70,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
+<<<<<<< Updated upstream:03 - week-2/event-loop/event-loop-phases.js
 console.log("hola mundo");
+=======
+>>>>>>> Stashed changes:03-week-2/event-loop/event-loop-phases.js
