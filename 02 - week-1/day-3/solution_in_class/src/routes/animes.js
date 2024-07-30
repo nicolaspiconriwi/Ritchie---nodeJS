@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { promises as fs } from 'fs';
-import { fileURLToPath  } from "url";
+import { fileURLToPath } from "url";
 import path from 'path';
 
 const routerAnime = Router();
@@ -11,10 +11,10 @@ const _dirname = path.dirname(_filename)
 const animesFilePath = path.join(_dirname, "../../data/animes.json");
 
 const readAnimesFs = async () => {
-    try{
+    try {
         const animes = await fs.readFile(animesFilePath)
         return JSON.parse(animes);
-    }catch(err){
+    } catch (err) {
         throw new Error(`Error en la promesa ${err}`)
     }
 };
@@ -44,14 +44,14 @@ routerAnime.get("/", async (req, res) => {
 routerAnime.get("/:animeId", async (req, res) => {
     const animes = await readAnimesFs();
     const anime = animes.find(a => a.id === parseInt(req.params.animeId));
-    if(!anime) return res.status(404).send("Anime not found");
+    if (!anime) return res.status(404).send("Anime not found");
     res.json(anime)
 });
 
 routerAnime.put("/:id", async (req, res) => {
     const animes = await readAnimesFs();
     const indexAnime = animes.findIndex(a => a.id === parseInt(req.params.id));
-    if(indexAnime === -1) return res.status(404).send("Anime not found");
+    if (indexAnime === -1) return res.status(404).send("Anime not found");
     const updateAnime = {
         ...animes[indexAnime],
         title: req.body.title,
@@ -74,13 +74,13 @@ routerAnime.put("/:id", async (req, res) => {
 
 // });
 
-routerAnime.delete('/:id', async (req,res)=>{
+routerAnime.delete('/:id', async (req, res) => {
     const animes = await readAnimesFs();
     const animeIndex = animes.findIndex(anime => anime.id === parseInt(req.params.id))
-    if(animes === -1) return res.status(404).send('Anime not found')
-        const deleteAnime = animes.splice(animeIndex,1)
-        await writeAnimesFs(deleteAnime)
-        res.send('The anime has been deleted')
+    if (animes === -1) return res.status(404).send('Anime not found')
+    const deleteAnime = animes.splice(animeIndex, 1)
+    await writeAnimesFs(deleteAnime)
+    res.send('The anime has been deleted')
 
 
 })

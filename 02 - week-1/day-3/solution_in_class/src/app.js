@@ -11,7 +11,6 @@ app.use(express.json());
 app.use('/animes', routerAnime);
 app.use(errorHandler);
 
-
 app.listen(PORT, () => {
     console.log(`El puerto esta siendo escuchado correctamente en http://localhost:${PORT}`);
 })
