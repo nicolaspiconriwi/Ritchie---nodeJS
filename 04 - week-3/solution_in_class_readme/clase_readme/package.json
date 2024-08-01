@@ -1,0 +1,15 @@
+{
+  "name": "clase_readme",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "tsc && node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
