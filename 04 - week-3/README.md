@@ -76,7 +76,7 @@ Inicializar un proyecto de TypeScript de manera correcta asegura un buen punto d
 npm init -y
 npm install typescript --save-dev
 npx tsc --init
-nano 
+nano index.ts
 ```
 
 #### Exploremos los comandos utilizados:
