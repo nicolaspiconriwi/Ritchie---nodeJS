@@ -1,5 +1,9 @@
-import { FieldPacket, ResultSetHeader } from "mysql2";
-import { Pool, RowDataPacket } from "mysql2/promise";
+import {
+  FieldPacket,
+  Pool,
+  ResultSetHeader,
+  RowDataPacket,
+} from "mysql2/promise";
 import { User } from "../interfaces/user";
 
 export class UserRepository {
@@ -9,10 +13,10 @@ export class UserRepository {
     const [rows]: [RowDataPacket[], FieldPacket[]] = await this.pool.query(
       "SELECT * FROM users"
     );
-    return rows as User[]; // Cast rows to User[]
+    return rows as User[];
   }
 
-  async getById(id: number): Promise<User | null> {
+  async getById(id: string): Promise<User | null> {
     const [rows]: [ResultSetHeader, FieldPacket[]] = await this.pool.query(
       "SELECT * FROM users WHERE id = ?",
       [id]
@@ -20,14 +24,18 @@ export class UserRepository {
     if (Array.isArray(rows) && rows.length > 0) {
       return rows[0];
     }
+
     return null;
   }
 
-  async create(newUser: User): Promise<User> {
-    const [result]: [ResultSetHeader, FieldPacket[]] = await this.pool.query(
-      "INSERT INTO users SET ?",
-      [newUser]
+  async updateUser(id: string, user: Omit<User, "id">) {
+    const [rows]: [ResultSetHeader, FieldPacket[]] = await this.pool.query(
+      "UPDATE users SET name = ?, email = ? WHERE id = ?",
+      [user.name, user.email, id]
     );
-    return { ...newUser, id: result.insertId };
+    if (Array.isArray(rows) && rows.length > 0) {
+      return rows[0];
+    }
+    return null;
   }
 }

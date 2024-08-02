@@ -84,7 +84,7 @@ PORT=3000
 
 ### Crear el acceso a datos y el pool de conexiones
 
-En `src/data-access`, crear un archivo `db.ts`:
+En `src/config`, crear un archivo `db.ts`:
 ```typescript
 import { createPool } from 'mysql2/promise';
 import dotenv from 'dotenv';
@@ -105,7 +105,7 @@ export default pool;
 ```
 
 ### Crear las interfaces
-En `src/interfaces`, crear un archivo `User.ts`:
+En `src/interfaces`, crear un archivo `user.ts`:
 ```typescript
 export interface User {
   id: number;

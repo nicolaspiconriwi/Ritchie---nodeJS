@@ -3,16 +3,14 @@ import { Request, Response } from "express";
 import { User } from "../interfaces/user";
 import pool from "../config/db";
 import { UserRepository } from "../data-access/userModel";
-import { ApiResponse } from "../helpers/apiResponse";
 
 export const getAll = async (_: Request, res: Response): Promise<void> => {
   try {
     const userRepository: UserRepository = new UserRepository(pool); // Recordemos que podemos tipar la variable userRepository usando UserRepository clase
-    const users: Promise<User[]> = await userRepository.getAll();
-    // ApiResponse.success(res, 200, users);
+    const users: User[] = await userRepository.getAll();
+    ApiResponse.success(res, 200, users);
   } catch (error: any) {
-    // ApiResponse.error(res, 500, error.message);
-    res.send("error")
+    ApiResponse.error(res, 500, error.message);
   }
 };
 
