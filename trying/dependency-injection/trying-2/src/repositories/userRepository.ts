@@ -14,4 +14,8 @@ export default class UserRepository {
     async create(user: Partial<User>) {
         return await User.create(user);
     }
+
+    async findByEmail(email: string) {
+        return await User.findOne({ where: { email } });
+    }
 }

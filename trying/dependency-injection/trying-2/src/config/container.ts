@@ -6,5 +6,6 @@ import ProductService from '../services/productService';
 
 container.registerSingleton<UserRepository>(UserRepository);
 container.registerSingleton<UserService>(UserService);
+
 container.registerSingleton<ProductRepository>(ProductRepository);
 container.registerSingleton<ProductService>(ProductService);
